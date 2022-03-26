@@ -36,6 +36,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Fabricante/ListFabricante.php?action=list' ?>">Gestión de Constructoras</a></li>
                                 <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Producto/ListProducto.php?action=list' ?>">Gestión de Casas</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/TiposAcabado/ListTipoAcabado.php?action=list' ?>">Gestión de Acabados</a></li>
                             </ul>
                         </li>
                         <a class="nav-link" href="<?php echo $urlServer . '/views/Biblioteca/ListCompras.php?action=list' ?>">Mis Cotizaciones</a>

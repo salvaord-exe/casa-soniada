@@ -121,6 +121,11 @@ class ProductoController
             */
         return $varObject;
     }
+
+    function collectTipoAcabados(){
+        return $this->modelObject->collectTipoAcabados();
+    }
+
 }
 
 ?>

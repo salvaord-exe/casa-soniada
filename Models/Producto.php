@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Database/dbConnection.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Models/Fabricante.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Models/TipoAcabados.php');
 
 class Producto
 {
@@ -18,6 +19,7 @@ class Producto
     private $fecha_modificacion;
     private $user_modificacion;
     private $bd_connection;
+    private $model_tipo_acabado;
     private $table_name;
 
     public function get($attr)

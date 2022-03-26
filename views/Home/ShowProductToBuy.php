@@ -30,12 +30,15 @@ if (isset($_GET) && !isset($_GET['action'])) {
                     <div class="row">
                         <div class="col">
 
-                            <p class="card-text fs-4"><span class="bi-house-fill"></span> Cuartos: <?php echo  $varObject['cant_habitaciones'] ?> </p>
-                            <p class="card-text fs-4"><span class="bi-house-fill"></span> Superficie: <?php echo  $varObject['superficie'] ?> mts2 </p>
+                            <p class="card-text fs-4"><span class="bi-house-fill"></span> Cuartos:
+                                <?php echo  $varObject['cant_habitaciones'] ?> </p>
+                            <p class="card-text fs-4"><span class="bi-house-fill"></span> Superficie:
+                                <?php echo  $varObject['superficie'] ?> mts2 </p>
                         </div>
                         <div class="col">
                             <p class="card-text fs-4">$ <span id="precio-producto"><?php echo  $varObject['precio'] ?></span> </p>
-                            <p class="card-text fs-4"><span class="bi-star-fill" style="color: #fcbe03;"></span> <?php echo  $varObject['calificacion'] ?>/5 </p>
+                            <p class="card-text fs-4"><span class="bi-star-fill" style="color: #fcbe03;"></span>
+                                <?php echo  $varObject['calificacion'] ?>/5 </p>
                         </div>
                     </div>
 
@@ -45,39 +48,42 @@ if (isset($_GET) && !isset($_GET['action'])) {
 
     </div>
     <div class="row mb-2 mt-4 ">
-        <div class="col-md-4">
+        <div class="col-md-7">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 
                 <div class="col p-4 d-flex flex-column position-static">
-                    <h3 class="mb-0">¡Lo quiero!</h3>
-                    <form action="CarritoCompra.php" method="post">
-                        <?php
-                        if (isset($_GET['id_producto']) && isset($_GET['cantProducto'])) {
-                            echo "Cantidad de productos = " . $_GET['cantProducto'];
-                            $cantProducto = $_GET['cantProducto'];
-                            $subTotalProducto = $varObject['precio'] * $cantProducto;
-                            $stateAgregarCarrito = "hidden";
-                            $stateActualizarCarrito = "";
-                        } else {
-                            $cantProducto = "0";
-                            $subTotalProducto = "0";
-                            $stateAgregarCarrito = "";
-                            $stateActualizarCarrito = "hidden";
-                        }
-                        ?>
+                    <h3 class="mb-0">¿Desea acabados?</h3>
+                    <table class="table table-hover mt-2">
+                        <thead>
+                            <tr class="">
+                                <th>Id</th>
+                                <th>Tipo Acabado</th>
+                                <th>Acabado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
 
-                        <p class="fs-2 mt-3"><span class="fs-4">Cantidad:</span> <a href="" id="restar-cant" class="bi-dash-circle-fill" style="color: black;"></a> <span id="cant-carrito"><?php echo $cantProducto ?></span> <a href="" id="sumar-cant" class="bi-plus-circle-fill" style="color: black;"></a></p>
-                        <p class="fs-3 mt-3"><span class="fs-4">Subtotal:</span> $<span id="sub-carrito"><?php echo $subTotalProducto ?></span> </p>
-                        <input type="text" id="id" name="id" value="<?php echo $varObject['id'] ?>" hidden>
-                        <input type="text" id="nombre_producto" name="nombre_producto" value="<?php echo $varObject['nombre'] ?>" hidden>
-                        <input type="number" id="cantidad_producto" name="cantidad_producto" value="<?php echo $cantProducto ?>" hidden>
-                        <input type="number" id="precio_producto" name="precio_producto" step=".01" hidden>
-                        <input type="number" id="subtotal_producto" name="subtotal_producto" step=".01" value="<?php echo $subTotalProducto ?>" hidden>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">Resumen: </h3>
+                    <form action="CarritoCompra.php" method="post">
+
+                        <p class="fs-4 mt-3"><span class="fs-4">Precio Casa:</span> $<?php echo  $varObject['precio'] ?><span id="sub-casa"></span> </p>
+                        <p class="fs-4 mt-3"><span class="fs-4">Precio Acabados:</span> $<span id="sub-acabados"></span> </p>
                         <div class="">
-                            <input class="btn btn-primary" type="submit" id="agregar_carrito" name="agregar_carrito" value="Agregar al Carrito" disabled <?php echo $stateAgregarCarrito; ?>>
-                            <input class="btn btn-primary" type="submit" id="actualizar_carrito" name="actualizar_carrito" value="Actualizar Carrito" <?php echo $stateActualizarCarrito; ?>>
                             <script>
-                                document.write('<a class="btn btn-secondary" href="' + document.referrer + '">Cancelar</a>');
+                                document.write('<a class="btn btn-secondary" href="' + document.referrer +
+                                    '">Cancelar</a>');
                             </script>
                         </div>
                     </form>

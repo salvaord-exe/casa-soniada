@@ -9,6 +9,7 @@ $object = new ProductoController();
 
 if (isset($_GET) && !isset($_GET['action'])) {
     $varObject = $object->findByIdWhitManufacturer($_GET['id']);
+    $lstTipoAcabado = $object->collectTipoAcabados();
 } else {
     $varObject = $object->findByIdWhitManufacturer($_GET['id_producto']);
 }
@@ -63,7 +64,25 @@ if (isset($_GET) && !isset($_GET['action'])) {
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </td>
+                            </tr>
 
                         </tbody>
                     </table>

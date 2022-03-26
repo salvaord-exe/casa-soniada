@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Database/dbConnection.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Models/Fabricante.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Models/TipoAcabados.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Models/TipoAcabado.php');
 
 class Producto
 {
@@ -173,4 +173,12 @@ class Producto
         $now = date('Y-m-d H:i:s', time());
         return $now;
     }
+
+    public function collectTipoAcabados(){
+        $query = "select * from neg_tipo_acabado where estado like 'A';";
+        $result = $this->get("bd_connection")->consultaRetorno($query);
+
+        return $result;
+    }
+
 }

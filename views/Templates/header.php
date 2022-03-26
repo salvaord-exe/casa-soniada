@@ -48,7 +48,8 @@
                                 <span class="fs-2 bi-person-circle"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Home/Login.php' ?>">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Cliente/CrearUsuarioCliente.php' ?>">Registrarme </a></li>
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Opciones</a></li>
                                 <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>

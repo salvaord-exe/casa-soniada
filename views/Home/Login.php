@@ -43,7 +43,7 @@
 
     <main class="form-signin">
         <form>
-            <img class="mb-4" src="../../Assets/img/logostroe.png" alt="" width="300">
+            <img class="mb-4" src="../../Assets/img/logo_casa_soniada.png" alt="" width="300">
             <h1 class="h3 mb-3 fw-normal">Iniciar Sesión:</h1>
 
             <div class="form-floating">

@@ -41,7 +41,7 @@ CREATE TABLE `cat_catalogo_cabecera` (
 
 LOCK TABLES `cat_catalogo_cabecera` WRITE;
 /*!40000 ALTER TABLE `cat_catalogo_cabecera` DISABLE KEYS */;
-INSERT INTO `cat_catalogo_cabecera` VALUES (1,'Paises','Lista de países en general','A','2022-03-14 18:48:14','2022-03-15 10:22:41',1),(2,'Provincias','Lista de provincias del Ecuador','A','2022-03-15 04:06:20','2022-03-14 23:41:50',1),(3,'Ciudades','Ciudades del Ecuador','A','2022-03-14 23:54:51','2022-03-20 11:59:36',1),(4,'Sexo','Sexos de las personas','A','2022-03-20 11:35:42','2022-03-20 11:57:08',1),(5,'Sexo','Sexos de las personas','I','2022-03-20 11:36:41','2022-03-20 11:36:41',1),(6,'Sexo','Sexos de las personas','I','2022-03-20 11:37:14','2022-03-20 11:37:14',1),(7,'Sexo','Sexos de las personas','I','2022-03-20 11:37:43','2022-03-20 11:37:43',1),(8,'','','I','2022-03-20 11:38:12','2022-03-20 11:38:12',1),(9,'','','I','2022-03-20 11:38:16','2022-03-20 11:38:16',1);
+INSERT INTO `cat_catalogo_cabecera` VALUES (1,'Paises','Lista de países en general','A','2022-03-14 18:48:14','2022-03-26 10:22:22',1),(2,'Provincias','Lista de provincias del Ecuador','A','2022-03-15 04:06:20','2022-03-14 23:41:50',1),(3,'Ciudades','Ciudades del Ecuador','A','2022-03-14 23:54:51','2022-03-20 11:59:36',1),(4,'Sexo','Sexos de las personas','A','2022-03-20 11:35:42','2022-03-20 11:57:08',1),(5,'Sexo','Sexos de las personas','I','2022-03-20 11:36:41','2022-03-20 11:36:41',1),(6,'Sexo','Sexos de las personas','I','2022-03-20 11:37:14','2022-03-20 11:37:14',1),(7,'Sexo','Sexos de las personas','I','2022-03-20 11:37:43','2022-03-20 11:37:43',1),(8,'','','I','2022-03-20 11:38:12','2022-03-20 11:38:12',1),(9,'','','I','2022-03-20 11:38:16','2022-03-20 11:38:16',1);
 /*!40000 ALTER TABLE `cat_catalogo_cabecera` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,6 +82,36 @@ LOCK TABLES `cat_catalogo_detalle` WRITE;
 /*!40000 ALTER TABLE `cat_catalogo_detalle` DISABLE KEYS */;
 INSERT INTO `cat_catalogo_detalle` VALUES (1,'Estados Unidos','Pais Estados Unidos',1,NULL,'A','2022-03-14 18:49:47','2022-03-14 18:49:47',NULL,NULL),(2,'Argentina','País Argentina',1,NULL,'A','2022-03-14 23:39:08','2022-03-14 23:39:08',1,NULL),(3,'Urugay','País Uruguay',1,NULL,'A','2022-03-14 23:39:26','2022-03-14 23:59:42',1,NULL),(4,'Guayas','Provincia del Guayas',2,NULL,'A','2022-03-14 23:42:03','2022-03-14 23:42:03',1,NULL),(5,'Manabí','Provincia de Manabí xd',2,NULL,'A','2022-03-14 23:47:52','2022-03-14 23:53:02',1,NULL),(6,'Tungurahua','Provincia de Tungurahua',2,NULL,'A','2022-03-14 23:54:30','2022-03-14 23:54:37',1,NULL),(7,'Guayaquil','Ciudad de Guayaquil',3,NULL,'A','2022-03-14 23:55:02','2022-03-14 23:55:02',1,NULL),(8,'España','Reino de España',1,NULL,'A','2022-03-14 23:59:25','2022-03-14 23:59:25',1,NULL),(9,'Japón','República del Sol Naciente :D',1,NULL,'A','2022-03-15 01:18:04','2022-03-15 01:18:04',1,NULL),(10,'Masculino','Sexo Masculino',4,NULL,'A','2022-03-20 11:39:15','2022-03-20 11:39:15',1,NULL),(11,'Masculino','Sexo Masculino',4,NULL,'I','2022-03-20 11:39:36','2022-03-20 11:39:36',1,NULL),(12,'Femenino','Sexo Femenino',4,NULL,'A','2022-03-20 11:52:38','2022-03-20 11:52:38',1,NULL),(13,'Femenino','Sexo Femenino',4,NULL,'I','2022-03-20 11:53:45','2022-03-20 11:53:45',1,NULL),(14,'Femenino','Sexo Femenino',4,NULL,'I','2022-03-20 11:54:24','2022-03-20 11:54:24',1,NULL),(15,'Femenino','Sexo Femenino',4,NULL,'I','2022-03-20 11:55:03','2022-03-20 11:55:03',1,NULL),(16,'Otro','Otros sexos',4,NULL,'A','2022-03-20 11:56:57','2022-03-20 11:56:57',1,NULL),(17,'Durán','Cantón de Durán',3,NULL,'A','2022-03-20 11:59:26','2022-03-20 11:59:26',1,NULL),(18,'Daule','Cantón Daule',3,NULL,'A','2022-03-20 11:59:33','2022-03-20 11:59:33',1,NULL),(19,'Ecuador','República del Ecuador',1,NULL,'A','2022-03-20 14:24:46','2022-03-20 14:24:46',1,NULL);
 /*!40000 ALTER TABLE `cat_catalogo_detalle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `neg_acabado`
+--
+
+DROP TABLE IF EXISTS `neg_acabado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `neg_acabado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `id_tipo_acabado` int(11) DEFAULT NULL,
+  `precio` float DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_tipo_acabado` (`id_tipo_acabado`),
+  CONSTRAINT `neg_acabado_ibfk_1` FOREIGN KEY (`id_tipo_acabado`) REFERENCES `neg_tipo_acabado` (`id`),
+  CONSTRAINT `CONSTRAINT_1` CHECK (`estado` = 'A' or `estado` = 'I')
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `neg_acabado`
+--
+
+LOCK TABLES `neg_acabado` WRITE;
+/*!40000 ALTER TABLE `neg_acabado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `neg_acabado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -217,7 +247,7 @@ CREATE TABLE `neg_fabricante` (
 
 LOCK TABLES `neg_fabricante` WRITE;
 /*!40000 ALTER TABLE `neg_fabricante` DISABLE KEYS */;
-INSERT INTO `neg_fabricante` VALUES (1,3,'Rockstar Games','Augsto Smith - Contacto de Ventas','588338383883','58823412341','ventas@rockstar.com','2018-09-08','2018-09-08','2023-07-19',NULL,'A','2022-03-15 00:34:06','2022-03-15 01:13:28',1),(2,9,'Nintendo Inc.','Shinji Ikari - Sales Manager','0978699517','0978699517','ventas@nintendo.com','2019-07-15','2020-08-20','2023-09-19',NULL,'A','2022-03-15 01:19:09','2022-03-15 01:19:20',1),(3,1,'Activision','Contact Sales - Activision','0999999999','0995168577','salvador_ordonez@movil2go.ec','2022-03-11','2022-03-24','2022-03-11',NULL,'A','2022-03-20 10:11:24','2022-03-20 10:11:24',1);
+INSERT INTO `neg_fabricante` VALUES (1,9,'Ing. Fabricio Castro','Augsto Smith - Contacto de Ventas','588338383883','58823412341','ventas@ing-fab-castro.com','2018-09-08','2018-09-08','2023-07-19',NULL,'A','2022-03-15 00:34:06','2022-03-26 10:22:49',1),(2,9,'Arq. Augusto Merchán','Shinji Ikari - Sales Manager','0978699517','0978699517','ventas-arqmerchan@gmail.com','2019-07-15','2020-08-20','2023-09-19',NULL,'A','2022-03-15 01:19:09','2022-03-23 07:01:45',1),(3,1,'Constru-Pro S.A.','Contact Sales - Activision','0999999999','0995168577','ventas@construpro.com.ec','2022-03-11','2022-03-24','2022-03-11',NULL,'A','2022-03-20 10:11:24','2022-03-23 07:02:11',1);
 /*!40000 ALTER TABLE `neg_fabricante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -274,6 +304,8 @@ CREATE TABLE `neg_producto` (
   `descripcion` varchar(500) DEFAULT NULL,
   `id_fabricante` int(11) DEFAULT NULL,
   `precio` double DEFAULT NULL,
+  `cant_habitaciones` int(11) DEFAULT NULL,
+  `superficie` double DEFAULT NULL,
   `dir_imagen` varchar(500) DEFAULT NULL,
   `calificacion` double DEFAULT NULL,
   `estado` varchar(2) DEFAULT NULL,
@@ -292,8 +324,37 @@ CREATE TABLE `neg_producto` (
 
 LOCK TABLES `neg_producto` WRITE;
 /*!40000 ALTER TABLE `neg_producto` DISABLE KEYS */;
-INSERT INTO `neg_producto` VALUES (3,'videojuego1','sadfasdfasfd',2,76.47,'/Uploads/Producto/3/img_videojuego1_id_3.png',4.2,'A','2022-03-14 11:13:08','2022-03-15 18:04:17',1),(4,'Grand Theft Auto 5','Mejor videojuego de 2016',1,54.3,'/Uploads/Producto/4/img_Grand-Theft-Auto-5_id_4.png',3.4,'A','2022-03-15 10:34:28','2022-03-19 23:31:31',1),(5,'Zelda','El mejor videojuego del año en 2001',2,80,'',4,'A','2022-03-15 11:06:01','2022-03-15 11:06:08',1),(6,'CAMP PRUEBA MOVI AA 100','sadfsadf',1,3,'',3,'I','2022-03-15 12:04:44','2022-03-15 12:04:44',1),(7,'producto prueba 1','asdfsadfasdfasdf',2,3,'',3,'I','2022-03-15 12:56:45','2022-03-15 12:56:45',1),(15,'producto 25','asdfasdsafdsadf',1,98,'/Uploads/Producto/15/img_producto-25_id_15.',2,'A','2022-03-15 15:53:30','2022-03-15 17:51:21',1),(16,'Videojuego 34','asdfasfsad',1,4,'/Uploads/Producto/16/img_Videojuego-34_id_16.png',4,'I','2022-03-15 16:05:59','2022-03-15 16:14:50',1),(17,'videojuego 35','asdfsadfsadf',1,4,'/Uploads/Producto/17/img_videojuego-35_id_17.jpg',5,'A','2022-03-15 16:18:52','2022-03-15 17:38:40',1),(18,'producto 40','sadasdf',1,3,'/Uploads/Producto/18/img_producto-40_id_18.',3.9,'A','2022-03-15 17:14:01','2022-03-15 17:51:27',1),(19,'Videojuego 87','asdfasdf',2,98,'/Uploads/Producto/19/img_Videojuego-87_id_19.png',4.5,'A','2022-03-15 17:49:46','2022-03-20 02:04:37',1),(20,'Call of Duty','Es un videojuego que ya ha pasado de moda',3,76,'/Uploads/Producto/20/img_Call-of-Duty_id_20.jpeg',4.7,'A','2022-03-20 10:12:45','2022-03-20 10:12:45',1);
+INSERT INTO `neg_producto` VALUES (3,'Casa Esmeralda','sadfasdfasfd',1,100000,1,100,'/Uploads/Producto/3/img_Casa-Esmeralda_id_3.jpg',5,'A','2022-03-14 11:13:08','2022-03-23 08:03:01',1),(4,'Casa Platino','Una excelente casa para comprar.',1,54.3,3,200,'/Uploads/Producto/4/img_Casa-Platino_id_4.jpg',3.4,'A','2022-03-15 10:34:28','2022-03-23 08:02:46',1),(5,'Casa Europa','Una excelente casa para comprar.',2,80,4,250,'/Uploads/Producto/5/img_Casa-Europa_id_5.jpg',4,'A','2022-03-15 11:06:01','2022-03-23 08:02:53',1),(6,'CAMP PRUEBA MOVI AA 100','sadfsadf',1,3,NULL,NULL,'',3,'I','2022-03-15 12:04:44','2022-03-15 12:04:44',1),(7,'producto prueba 1','asdfsadfasdfasdf',2,3,NULL,NULL,'',3,'I','2022-03-15 12:56:45','2022-03-15 12:56:45',1),(15,'Casa Primavera','asdfasdsafdsadf',3,98,3,150,'/Uploads/Producto/15/img_Casa-Primavera_id_15.jpg',2,'A','2022-03-15 15:53:30','2022-03-23 08:02:59',1),(16,'Videojuego 34','asdfasfsad',1,4,NULL,NULL,'/Uploads/Producto/16/img_Videojuego-34_id_16.png',4,'I','2022-03-15 16:05:59','2022-03-15 16:14:50',1),(17,'videojuego 35','asdfsadfsadf',1,4,NULL,NULL,'/Uploads/Producto/17/img_videojuego-35_id_17.jpg',5,'I','2022-03-15 16:18:52','2022-03-15 17:38:40',1),(18,'producto 40','sadasdf',1,3,NULL,NULL,'/Uploads/Producto/18/img_producto-40_id_18.',3.9,'I','2022-03-15 17:14:01','2022-03-15 17:51:27',1),(19,'Videojuego 87','asdfasdf',2,98,NULL,NULL,'/Uploads/Producto/19/img_Videojuego-87_id_19.png',4.5,'I','2022-03-15 17:49:46','2022-03-20 02:04:37',1),(20,'Call of Duty','Es un videojuego que ya ha pasado de moda',3,76,NULL,NULL,'/Uploads/Producto/20/img_Call-of-Duty_id_20.jpeg',4.7,'I','2022-03-20 10:12:45','2022-03-20 10:12:45',1);
 /*!40000 ALTER TABLE `neg_producto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `neg_tipo_acabado`
+--
+
+DROP TABLE IF EXISTS `neg_tipo_acabado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `neg_tipo_acabado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `CONSTRAINT_1` CHECK (`estado` = 'A' or `estado` = 'I')
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `neg_tipo_acabado`
+--
+
+LOCK TABLES `neg_tipo_acabado` WRITE;
+/*!40000 ALTER TABLE `neg_tipo_acabado` DISABLE KEYS */;
+INSERT INTO `neg_tipo_acabado` VALUES (1,'Acabado Piso','Este es el acabado 1 1','A','2022-03-26 09:09:26','2022-03-26 09:10:58'),(2,'Acabado Grifería','Acabado para la grifería','A','2022-03-26 09:11:11','2022-03-26 09:11:11'),(3,'Acabado Puerta','Acabado para las puertas','A','2022-03-26 09:11:21','2022-03-26 09:11:21');
+/*!40000 ALTER TABLE `neg_tipo_acabado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -485,7 +546,7 @@ CREATE TABLE `seg_personal` (
 
 LOCK TABLES `seg_personal` WRITE;
 /*!40000 ALTER TABLE `seg_personal` DISABLE KEYS */;
-INSERT INTO `seg_personal` VALUES (1,'Admin1','Admin2','Admin3','Admin4','1998-04-02',10,'0978699517','0978699517',19,5,7,'El paso infinito del universo ensordecedor me acongoja lentamente. Ya no soy nada más que materia muerta en este infierno lleno de angustia, desesperación y desconcierto.\r\nEstoy muerto. Ellos me han asesinado.',NULL,NULL,1,'A',NULL,NULL,NULL),(2,'Empleado 1','Empleado 1','Empleado 2','Empleado 1','2000-04-04',10,'0978699517','0930230776',19,5,7,'asdfasdfsadfasdf',NULL,NULL,2,'A',NULL,NULL,NULL),(3,'Empleado 3','Empleado 3','Empleado 3','Empleado 3','2001-03-03',10,'0978699517','0978699161',9,5,17,'XD',NULL,NULL,3,'A',NULL,NULL,NULL);
+INSERT INTO `seg_personal` VALUES (1,'Admin1','Admin2','Admin3','Admin9','1998-04-02',12,'0978699517','0978699517',19,5,7,'El paso infinito del universo ensordecedor me acongoja lentamente. Ya no soy nada más que materia muerta en este infierno lleno de angustia, desesperación y desconcierto.\r\nEstoy muerto. Ellos me han asesinado.',NULL,NULL,1,'A',NULL,NULL,NULL),(2,'Empleado 3','Empleado 1','Empleado 2','Empleado 1','2000-04-04',10,'0978699517','0930230776',19,5,7,'asdfasdfsadfasdf',NULL,NULL,2,'A',NULL,NULL,NULL),(3,'Empleado 3','Empleado 3','Empleado 3','Empleado 3','2001-03-03',10,'0978699517','0978699161',19,5,17,'XD',NULL,NULL,3,'A',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `seg_personal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -519,7 +580,7 @@ CREATE TABLE `seg_usuario` (
 
 LOCK TABLES `seg_usuario` WRITE;
 /*!40000 ALTER TABLE `seg_usuario` DISABLE KEYS */;
-INSERT INTO `seg_usuario` VALUES (1,'admin2@gamestore.com','12345',1,NULL,'A','2022-03-14 17:12:10','2022-03-14 17:12:10',NULL),(2,'empleado@gamestore.com','12345',3,NULL,'A',NULL,NULL,NULL),(3,'empleado3@gamestore.com','987654321',3,NULL,'A',NULL,NULL,NULL);
+INSERT INTO `seg_usuario` VALUES (1,'admin2@casasoniada.com','12345',1,NULL,'A','2022-03-14 17:12:10','2022-03-14 17:12:10',NULL),(2,'empleado@casasoniada.com','12345',3,NULL,'A',NULL,NULL,NULL),(3,'empleado3@casasoniada.com','987654321',3,NULL,'A',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `seg_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -580,13 +641,15 @@ SET character_set_client = utf8;
   `fecha_creacion` tinyint NOT NULL,
   `fecha_modificacion` tinyint NOT NULL,
   `user_modificacion` tinyint NOT NULL,
+  `cant_habitaciones` tinyint NOT NULL,
+  `superficie` tinyint NOT NULL,
   `id_fabric_orig` tinyint NOT NULL,
   `nombre_fabric_orig` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
 --
--- Dumping routines for database 'neg_tienda_videojuegos'
+-- Dumping routines for database 'neg_casa_soniada'
 --
 
 --
@@ -603,7 +666,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_personal` AS select `sp`.`id` AS `id`,`sp`.`primer_nombre` AS `primer_nombre`,`sp`.`segundo_nombre` AS `segundo_nombre`,`sp`.`primer_apellido` AS `primer_apellido`,`sp`.`segundo_apellido` AS `segundo_apellido`,`sp`.`fecha_nacimiento` AS `fecha_nacimiento`,`sp`.`sexo` AS `sexo`,`sp`.`celular1` AS `celular1`,`sp`.`celular2` AS `celular2`,`sp`.`id_pais` AS `id_pais`,`sp`.`id_provincia` AS `id_provincia`,`sp`.`id_ciudad` AS `id_ciudad`,`sp`.`direccion` AS `direccion`,`sp`.`dir_curriculum` AS `dir_curriculum`,`sp`.`dir_copia_cedula` AS `dir_copia_cedula`,`sp`.`id_usuario` AS `id_usuario`,`sp`.`estado` AS `estado`,`sp`.`fecha_creacion` AS `fecha_creacion`,`sp`.`fecha_modificacion` AS `fecha_modificacion`,`sp`.`user_modificacion` AS `user_modificacion`,`seg_usr`.`id_user` AS `id_user`,`seg_usr`.`correo_usuario` AS `correo_usuario`,`seg_usr`.`contrasenia` AS `contrasenia`,`seg_usr`.`id_perfil` AS `id_perfil`,`seg_usr`.`nombre_perfil` AS `nombre_perfil` from (`neg_tienda_videojuegos`.`seg_personal` `sp` left join (select `su`.`id` AS `id_user`,`su`.`correo_usuario` AS `correo_usuario`,`su`.`contrasenia` AS `contrasenia`,`su`.`id_perfil` AS `id_perfil`,`perf`.`nombre_perfil` AS `nombre_perfil` from (`neg_tienda_videojuegos`.`seg_usuario` `su` left join (select `sp2`.`id` AS `id_perfil_orig`,`sp2`.`nombre_perfil` AS `nombre_perfil` from `neg_tienda_videojuegos`.`seg_perfil` `sp2`) `perf` on(`su`.`id_perfil` = `perf`.`id_perfil_orig`))) `seg_usr` on(`sp`.`id_usuario` = `seg_usr`.`id_user`)) */;
+/*!50001 VIEW `view_personal` AS select `sp`.`id` AS `id`,`sp`.`primer_nombre` AS `primer_nombre`,`sp`.`segundo_nombre` AS `segundo_nombre`,`sp`.`primer_apellido` AS `primer_apellido`,`sp`.`segundo_apellido` AS `segundo_apellido`,`sp`.`fecha_nacimiento` AS `fecha_nacimiento`,`sp`.`sexo` AS `sexo`,`sp`.`celular1` AS `celular1`,`sp`.`celular2` AS `celular2`,`sp`.`id_pais` AS `id_pais`,`sp`.`id_provincia` AS `id_provincia`,`sp`.`id_ciudad` AS `id_ciudad`,`sp`.`direccion` AS `direccion`,`sp`.`dir_curriculum` AS `dir_curriculum`,`sp`.`dir_copia_cedula` AS `dir_copia_cedula`,`sp`.`id_usuario` AS `id_usuario`,`sp`.`estado` AS `estado`,`sp`.`fecha_creacion` AS `fecha_creacion`,`sp`.`fecha_modificacion` AS `fecha_modificacion`,`sp`.`user_modificacion` AS `user_modificacion`,`seg_usr`.`id_user` AS `id_user`,`seg_usr`.`correo_usuario` AS `correo_usuario`,`seg_usr`.`contrasenia` AS `contrasenia`,`seg_usr`.`id_perfil` AS `id_perfil`,`seg_usr`.`nombre_perfil` AS `nombre_perfil` from (`neg_casa_soniada`.`seg_personal` `sp` left join (select `su`.`id` AS `id_user`,`su`.`correo_usuario` AS `correo_usuario`,`su`.`contrasenia` AS `contrasenia`,`su`.`id_perfil` AS `id_perfil`,`perf`.`nombre_perfil` AS `nombre_perfil` from (`neg_casa_soniada`.`seg_usuario` `su` left join (select `sp2`.`id` AS `id_perfil_orig`,`sp2`.`nombre_perfil` AS `nombre_perfil` from `neg_casa_soniada`.`seg_perfil` `sp2`) `perf` on(`su`.`id_perfil` = `perf`.`id_perfil_orig`))) `seg_usr` on(`sp`.`id_usuario` = `seg_usr`.`id_user`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -622,7 +685,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_producto_fabricante` AS select `np`.`id` AS `id`,`np`.`nombre` AS `nombre`,`np`.`descripcion` AS `descripcion`,`np`.`id_fabricante` AS `id_fabricante`,`np`.`precio` AS `precio`,`np`.`dir_imagen` AS `dir_imagen`,`np`.`calificacion` AS `calificacion`,`np`.`estado` AS `estado`,`np`.`fecha_creacion` AS `fecha_creacion`,`np`.`fecha_modificacion` AS `fecha_modificacion`,`np`.`user_modificacion` AS `user_modificacion`,`fabr`.`id_fabric_orig` AS `id_fabric_orig`,`fabr`.`nombre_fabric_orig` AS `nombre_fabric_orig` from (`neg_tienda_videojuegos`.`neg_producto` `np` left join (select `nf`.`id` AS `id_fabric_orig`,`nf`.`nombre_fabricante` AS `nombre_fabric_orig` from `neg_tienda_videojuegos`.`neg_fabricante` `nf`) `fabr` on(`np`.`id_fabricante` = `fabr`.`id_fabric_orig`)) */;
+/*!50001 VIEW `view_producto_fabricante` AS select `np`.`id` AS `id`,`np`.`nombre` AS `nombre`,`np`.`descripcion` AS `descripcion`,`np`.`id_fabricante` AS `id_fabricante`,`np`.`precio` AS `precio`,`np`.`dir_imagen` AS `dir_imagen`,`np`.`calificacion` AS `calificacion`,`np`.`estado` AS `estado`,`np`.`fecha_creacion` AS `fecha_creacion`,`np`.`fecha_modificacion` AS `fecha_modificacion`,`np`.`user_modificacion` AS `user_modificacion`,`np`.`cant_habitaciones` AS `cant_habitaciones`,`np`.`superficie` AS `superficie`,`fabr`.`id_fabric_orig` AS `id_fabric_orig`,`fabr`.`nombre_fabric_orig` AS `nombre_fabric_orig` from (`neg_casa_soniada`.`neg_producto` `np` left join (select `nf`.`id` AS `id_fabric_orig`,`nf`.`nombre_fabricante` AS `nombre_fabric_orig` from `neg_casa_soniada`.`neg_fabricante` `nf`) `fabr` on(`np`.`id_fabricante` = `fabr`.`id_fabric_orig`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -636,4 +699,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-22 22:09:12
+-- Dump completed on 2022-03-26 10:25:39

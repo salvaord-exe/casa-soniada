@@ -135,7 +135,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/casa_soniada/Database/dbConnection.php
             where id like '.$request['id'].'
             ;';
             $result = $this->get("bd_connection")->consultaRetorno($query1);
-
+            
             $query2 = '
             update seg_usuario set
 
@@ -146,8 +146,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/casa_soniada/Database/dbConnection.php
             where id like '.$request['id'].';';
 
             $result = $this->get("bd_connection")->consultaRetorno($query2);
-
-            return $query2;
+            
+            return $result;
         }
 
         public function delete($id){

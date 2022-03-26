@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Assets/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Game Store</title>
+    <title>Casa Soñada</title>
 </head>
 
 <body>
@@ -34,11 +34,11 @@
                                 Ventas
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Fabricante/ListFabricante.php?action=list' ?>">Gestión de Fabricantes de Videojuegos</a></li>
-                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Producto/ListProducto.php?action=list' ?>">Gestión de Videojuegos</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Fabricante/ListFabricante.php?action=list' ?>">Gestión de Constructoras</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $urlServer . '/views/Producto/ListProducto.php?action=list' ?>">Gestión de Casas</a></li>
                             </ul>
                         </li>
-                        <a class="nav-link" href="<?php echo $urlServer . '/views/Biblioteca/ListCompras.php?action=list' ?>">Mis Videojuegos</a>
+                        <a class="nav-link" href="<?php echo $urlServer . '/views/Biblioteca/ListCompras.php?action=list' ?>">Mis Cotizaciones</a>
                     </ul>
                     <span class="nav-item navbar-nav">
                         <a class="nav-link" href="<?php echo $urlServer . '/views/Home/CarritoCompra.php' ?>"><span class="fs-2 bi-cart-check-fill"></span></a>

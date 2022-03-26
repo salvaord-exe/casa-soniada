@@ -49,7 +49,7 @@ class ProductoController
     function saveFile($request,$id)
     {
         // Se crea o define el directorio del fichero
-        $file_dir = $_SERVER['DOCUMENT_ROOT'] . '/tienda_videojuegos/Uploads/Producto/' . $id . '/';
+        $file_dir = $_SERVER['DOCUMENT_ROOT'] . '/casa_soniada/Uploads/Producto/' . $id . '/';
         if(!is_dir($file_dir)){
             mkdir($file_dir);
         }
@@ -69,8 +69,14 @@ class ProductoController
 
     function update($request)
     {
-        $this->modelObject->update($this->createVarObject($request));
-        return $this->saveFile($request,$request['request']['id']);
+        $result = $this->modelObject->update($this->createVarObject($request));
+        if($request['files']['imagen_prod']['name'] == ""){
+            
+            return $result;
+        } else {
+            return $this->saveFile($request,$request['request']['id']);
+        }
+        
     }
 
     function delete($id)
@@ -105,6 +111,8 @@ class ProductoController
         $varObject->set("id_fabricante", $data['request']['id_fabricante']);
         $varObject->set("precio", $data['request']['precio']);
         $varObject->set("calificacion", $data['request']['calificacion']);
+        $varObject->set("superficie", $data['request']['superficie']);
+        $varObject->set("cant_habitaciones", $data['request']['cant_habitaciones']);
         /*
             $file_dir = $_SERVER['DOCUMENT_ROOT'] .'/tienda_videojuegos/Uploads/Producto/';
             if(!is_dir($file_dir.)){

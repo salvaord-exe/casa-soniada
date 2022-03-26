@@ -1,5 +1,5 @@
 <?php
-include("../Templates/header.php");
+
 require_once("../../Controllers/ProductoController.php");
 $object = new ProductoController();
 
@@ -33,13 +33,14 @@ if (isset($_GET['action']) && $_GET['action'] == "update") {
         "files" => $_FILES
     );
     $result = $object->update($arrRequest);
+    //var_dump($result);
     header("Location: ListProducto.php?action=list");
     die();
 }
 
 
 
-
+include("../Templates/header.php");
 ?>
 
 <main class="container">
@@ -56,7 +57,7 @@ if (isset($_GET['action']) && $_GET['action'] == "update") {
 
                 <div class="row">
                     <div class="form-group col-md-6 mt-1">
-                        <label for="nombre">Nombre Videojuego:</label>
+                        <label for="nombre">Nombre de Casa:</label>
                         <input type="text" class="form-control mt-1" id="nombre" name="nombre" <?php echo (isset($varObject)) ? 'value="' . $varObject['nombre'] . '"' : ''; ?> required>
                     </div>
                     <div class="form-group col-md-6 mt-1">
@@ -71,7 +72,14 @@ if (isset($_GET['action']) && $_GET['action'] == "update") {
                             ?>
                         </select>
                     </div>
-
+                    <div class="form-group col-md-6 mt-1">
+                        <label for="superficie">Superficie (mts2):</label>
+                        <input type="number" class="form-control mt-1" id="superficie" name="superficie" step="0.01" <?php echo (isset($varObject)) ? 'value="' . $varObject['superficie'] . '"' : ''; ?> required>
+                    </div>
+                    <div class="form-group col-md-6 mt-1">
+                        <label for="nombre">Cantidad de Habitaciones:</label>
+                        <input type="number" class="form-control mt-1" id="cant_habitaciones" min="1" name="cant_habitaciones" <?php echo (isset($varObject)) ? 'value="' . $varObject['cant_habitaciones'] . '"' : ''; ?> required>
+                    </div>
                     <div class="col-md-6 mt-1">
                         <div class="form-group">
                             <label for="precio">Precio:</label>
@@ -82,7 +90,7 @@ if (isset($_GET['action']) && $_GET['action'] == "update") {
                             <input type="number" class="form-control mt-1" id="calificacion" name="calificacion" min="0" max="5" step=".01" <?php echo (isset($varObject)) ? 'value="' . $varObject['calificacion'] . '"' : ''; ?>  required>
                         </div>
                         <div class="form-group mt-1 row">
-                            <label for="imagen_prod" class="form-label">Imagen del Videojuego</label>
+                            <label for="imagen_prod" class="form-label">Imagen de la Casa</label>
                             <div class="col-sm-7">
                                 <?php $stateFileInput = (!isset($varObject)) ? 'required' : ''; ?>
                                 <input class="form-control" accept="image/*" class="col-sm-2 form-control" type="file" id="imagen_prod" name="imagen_prod" <?php echo $stateFileInput ?>>

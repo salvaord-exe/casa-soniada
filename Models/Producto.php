@@ -11,6 +11,8 @@ class Producto
     private $precio;
     private $dir_imagen;
     private $calificacion;
+    private $superficie;
+    private $cant_habitaciones;
     private $estado;
     private $fecha_creacion;
     private $fecha_modificacion;
@@ -51,14 +53,14 @@ class Producto
     }
 
     public function findByIdWhitManufacturer($id){
-        $query = "select * from view_producto_fabricante where id like '{$id}';";
+        $query = "select * from view_producto_fabricante where id like '{$id}' and estado like 'A';";
         $result = $this->get("bd_connection")->consultaRetorno($query);
         $objectReturn = $result[0];
         return $objectReturn;
     }
 
     public function indexWithManufacturers(){
-        $query = "select * from view_producto_fabricante;";
+        $query = "select * from view_producto_fabricante where estado like 'A';";
         $result = $this->get("bd_connection")->consultaRetorno($query);
 
         return $result;
@@ -70,7 +72,8 @@ class Producto
         $now = $this->getCurrentTimestamp();
 
         $query = "insert into {$this->table_name} 
-            (nombre,descripcion,id_fabricante,precio,dir_imagen,calificacion,estado,fecha_creacion,fecha_modificacion,user_modificacion)
+            (nombre,descripcion,id_fabricante,precio,dir_imagen,calificacion,estado,fecha_creacion,fecha_modificacion,user_modificacion,
+            superficie,cant_habitaciones)
             values
             (
                 '{$request->nombre}',
@@ -82,7 +85,9 @@ class Producto
                 'A',
                 '{$now}',
                 '{$now}',
-                '1'
+                '1',
+                '{$request->superficie}',
+                '{$request->cant_habitaciones}'
                 
             )
             ;";
@@ -109,8 +114,9 @@ class Producto
             descripcion = '{$request->descripcion}',
             id_fabricante = '{$request->id_fabricante}',
             precio = '{$request->precio}',
-            dir_imagen = '{$request->dir_imagen}',
             calificacion = '{$request->calificacion}',
+            superficie = '{$request->superficie}',
+            cant_habitaciones = '{$request->cant_habitaciones}',
             fecha_modificacion = '{$this->getCurrentTimestamp()}',
             user_modificacion = '1'
 

@@ -30,8 +30,8 @@ include("../Templates/header.php");
     <div class="container">
         <div class="card mt-2">
             <div class="card-header d-flex justify-content-between">
-                <h3>Lista de Productos</h3>
-                <a href="./ShowProducto.php?action=show" class="btn btn-success">Crear Producto +</a>
+                <h3>Lista de Casas</h3>
+                <a href="./ShowProducto.php?action=show" class="btn btn-success">Crear Casa +</a>
             </div>
             <div class="card-body">
                 <form action="?action=search" method="post">
@@ -47,7 +47,7 @@ include("../Templates/header.php");
                     <thead>
                         <tr class="table-dark">
                             <th>Id</th>
-                            <th>Nombre</th>
+                            <th>Nombre Casa</th>
                             <th>Precio</th>
                             <th>Calificacion</th>
                             <th>Fecha Creación</th>

@@ -1,5 +1,5 @@
 <?php
-include("../Templates/header.php");
+
 require_once("../../Controllers/FabricanteController.php");
 
 $object = new FabricanteController();
@@ -33,7 +33,7 @@ if (isset($_GET['action']) && $_GET['action'] == "update") {
 }
 
 
-
+include("../Templates/header.php");
 ?>
 
 <main class="container">

@@ -1,5 +1,5 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] .'/tienda_videojuegos/Core/config.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/casa_soniada/Core/config.php');
 
     class DBConnection{
 

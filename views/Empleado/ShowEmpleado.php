@@ -44,7 +44,7 @@ if (isset($_GET['action']) && $_GET['action'] == "edit") {
 
 if (isset($_GET['action']) && $_GET['action'] == "update") {
     $result = $object->update($_REQUEST);
-    echo $result;
+    echo var_dump($result);
     header("Location: ListEmpleado.php?action=list");
     die();
 }
